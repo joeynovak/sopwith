@@ -12,15 +12,12 @@ const ThreeDegrees = Math.PI / 120;
 const TenDegrees = Math.PI / 36;
 const TwentyDegrees = Math.PI / 18;
 
-const planeWidth = 32;
-const planeHeight = 18;
-
 function init() {
 	planeCanvas = document.getElementById('plane');
 	planeCanvas.width = document.width;
-	planeCanvas.height = document.height; 
+	planeCanvas.height = document.height;
 	ctx = planeCanvas.getContext('2d');
-	
+
 	initiateLevel();
 	setInterval(render,50);
 }
@@ -30,7 +27,6 @@ function initiateLevel() {
 }
 
 function render() {
-	//clearCanvas();
 	ctx.clearRect(0,0,document.width,document.height);
 
 	for(i in stage) {
@@ -39,12 +35,9 @@ function render() {
 }
 
 
-function clearCanvas() {
-	ctx.fillStyle = "rgb(0,0,0)";
-	ctx.fillRect(0, 0, document.width, document.height);
-}
-
-
+/* -------------------------- */
+/* Detect key events */
+/* -------------------------- */
 $(document).keydown(onKeyDown);
 $(document).keyup(onKeyUp);
 

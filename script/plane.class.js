@@ -2,17 +2,19 @@ function Plane(paramX, paramY) {
 	//Properties
 	this.x=paramX;
 	this.y=paramY;
-	
+
 	plane = new Image();
 	plane.src = '/assets/plane.png';
 	this.components = plane;
 
 	this.angle = 0;
-
 	this.s = 5;
 
+	this.width = 55;
+	this.height = 29;
+
 	//Methods
-	this.draw = function() {					//Draw
+	this.draw = function() {
 		ctx.save();
 
 		dx = Math.cos(this.angle) * this.s;
@@ -22,23 +24,19 @@ function Plane(paramX, paramY) {
 		this.y = this.y + dy;
 
 		this.s = this.s + (dy / 50);
-		//$('#airspeed').text(this.s);
 
 		bRight = true;
 
 		if((-HalfPI < this.angle) && (this.angle < HalfPI)) {
-			//$('#direction').text('right');
 			this.angle = (this.angle + (OneDegree * (10 / this.s)))  % TwoPI;
 		} else {
 			bRight = false;
 			this.angle = (this.angle - (OneDegree * (10 / this.s)))  % TwoPI;
-			//$('#direction').text('left');
 		}
 
 
 
 		if(this.s < 3 && bRight) {
-			//this.s = - this.s;
 			this.angle = this.angle - TenDegrees;
 		} else if(this.s < 2) {
 			this.angle = this.angle + TenDegrees;
@@ -57,13 +55,9 @@ function Plane(paramX, paramY) {
 		ctx.rotate(this.angle);
 		ctx.translate(-this.x - 46, -this.y - 18);
 
-		bRight ? ctx.drawImage(this.components, 0, 0, 55, 29, this.x, this.y, 55, 29) : ctx.drawImage(this.components, 55, 0, 55, 29, this.x, this.y, 55, 29);
-		
-		stage.push(new Smoke(this.x + (Math.random() * 5), this.y + (Math.random() * 5)));
+		bRight ? ctx.drawImage(this.components, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height) : ctx.drawImage(this.components, this.width, 0, this.width, this.height, this.x, this.y, this.width, this.height);
 
-		//$('#angle').text(this.angle);
-		//$('#dx').text(dx);
-		//$('#dy').text(dy);
+		stage.push(new Smoke(this.x + (Math.random() * 5), this.y + (Math.random() * 5)));
 
 		ctx.restore();
 	};
