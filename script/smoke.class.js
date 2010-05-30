@@ -20,7 +20,7 @@ function Smoke(paramX, paramY) {
 		ctx.fill();
 
 		this.radius = this.radius + 1;
-		this.opacity = this.opacity - 0.01;
+		this.opacity = this.opacity - 0.03;
 		if(this.opacity <= 0) stage.splice(stage.indexOf(this), 1);
 
 		ctx.restore();

@@ -23,6 +23,7 @@ function init() {
 }
 
 function initiateLevel() {
+	stage.push(new Level(1));
 	stage.push(new Plane(0, 0));
 }
 
