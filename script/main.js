@@ -45,7 +45,24 @@ function render() {
 	ctx.fillStyle = "White";
 	ctx.font = 'italic 30px sans-serif';
 	ctx.fillText("Player:" + playerScore, 10, 50);  
-	ctx.fillText("Computer:" + computerScore, 10, 100);  
+	
+	ctx.strokeStyle = 'white';
+	
+	ctx.beginPath();
+	ctx.lineWidth = 15;
+	ctx.lineTo(10, 75);
+	ctx.lineTo(10 + player.health, 75);
+	ctx.stroke();
+	ctx.closePath();
+	
+	ctx.fillText("Computer:" + computerScore, 10, 150);  
+	
+	ctx.beginPath();
+	ctx.lineWidth = 15;
+	ctx.lineTo(10, 175);
+	ctx.lineTo(10 + computer.health, 175);
+	ctx.stroke();
+	ctx.closePath();
 }
 
 

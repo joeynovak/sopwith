@@ -28,8 +28,7 @@ function Bullet(paramX, paramY, paramdx, paramdy, paramTarget) {
 		
 		if(typeof(this.target) !== 'undefined') {
 			if(Math.abs(this.x - this.target.x) < 50 && Math.abs(this.y - this.target.y) < 50 && !this.target.dead) {
-				this.target.dead = true;
-				this.target.explode();
+				this.target.hit();
 			}
 		}
 		

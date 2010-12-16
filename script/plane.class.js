@@ -3,6 +3,7 @@ function Plane() {
 	this.x=0;
 	this.y=0;
 	this.dead=false;
+	this.health = 100;
 
 	plane = new Image();
 	plane.src = '/assets/plane.png';
@@ -77,6 +78,16 @@ function Plane() {
 		
 		setTimeout(this.spawn, 2000);
 		computerScore++;
+	}
+	
+	this.hit = function() {
+		this.health -= 1;
+		stage.push(new Smoke(this.x + (Math.random() * 5), this.y + (Math.random() * 5), 10));
+		
+		if(this.health <= 0) {
+			this.dead = true;
+			this.explode();		
+		}
 	}
 	
 	this.spawn = function() {
