@@ -1,9 +1,13 @@
-function Smoke(paramX, paramY) {
+function Smoke(paramX, paramY, paramRadius) {
 	//Properties
 	this.x=paramX;
 	this.y=paramY;
 	this.opacity=0.25;
-	this.radius=2;
+	if(typeof(paramRadius) !== 'undefined') {
+		this.radius=paramRadius;
+	} else {
+		this.radius=2;
+	}
 	this.rgb = '255,255,255';
 
 	//Methods

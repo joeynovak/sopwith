@@ -1,4 +1,4 @@
-function Plane() {
+function AIPlane() {
 	//Properties
 	this.x=0;
 	this.y=0;
@@ -36,24 +36,39 @@ function Plane() {
 		}
 
 		if(this.s < 3 && bRight) {
-			this.angle = this.angle - TenDegrees;
-		} else if(this.s < 3) {
-			this.angle = this.angle + TenDegrees;
+			//this.angle = this.angle - TenDegrees;
+		} else if(this.s < 2) {
+			//this.angle = this.angle + TenDegrees;
 		}
 
+		targetX = player.x - computer.x;
+		targetY = player.y - computer.y;
 
-		if(leftDown) {
-			this.angle = (this.angle - TenDegrees) % TwoPI;
+		var regular = (computer.angle - Math.atan2(targetY, targetX));
+		var backwards = (computer.angle - (Math.atan2(targetY, targetX) - TwoPI));
+		var forwards = (computer.angle - (Math.atan2(targetY, targetX) + TwoPI));
+		if(Math.abs(regular) < Math.abs(backwards) && Math.abs(regular) < Math.abs(forwards)) {
+			targetAngle = regular;
+		} else if (Math.abs(forwards) < Math.abs(backwards)) {
+			targetAngle = forwards;
+		} else {
+			targetAngle = backwards;
 		}
 
-		if(rightDown) {
-			this.angle = (this.angle + TenDegrees) % TwoPI;
+		var bulletAngle = targetAngle;
+
+		if(targetAngle > 0) {
+			targetAngle = Math.min(targetAngle, FiveDegrees);
+		} else {
+			targetAngle = Math.max(targetAngle, -FiveDegrees);
 		}
-		
-		if(spacebarDown) {
-			stage.push(new Bullet(this.x, this.y, dx, dy, computer));
+
+		computer.angle -= targetAngle;
+
+		if(Math.abs(bulletAngle)<0.3) {
+			stage.push(new Bullet(this.x, this.y, dx, dy, player));
 		}
-		
+
 		ctx.translate(this.x, this.y);
 		ctx.rotate(this.angle);
 		ctx.translate(-this.x - 46, -this.y - 18);
@@ -74,15 +89,14 @@ function Plane() {
 				stage.push(new Smoke(plane.x + (Math.random() * 75), plane.y + (Math.random() * 75), 50));
 			}, 100 * i);
 		}
-		
 		setTimeout(this.spawn, 2000);
-		computerScore++;
+		playerScore++;
 	}
 	
 	this.spawn = function() {
-		player = new Plane();
-		player.x = $(document).width() * Math.random();
-		player.y = $(document).height() * Math.random();
-		stage.push(player);
+		computer = new AIPlane();
+		computer.x = $(document).width() * Math.random();
+		computer.y = $(document).height() * Math.random();
+		stage.push(computer);
 	}
 }
