@@ -1,16 +1,30 @@
 <html>
 	<head>
-		<title>Sopwith</title>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/script/plane.class.js"></script>
-		<script type="text/javascript" src="/script/ai-plane.class.js"></script>
-		<script type="text/javascript" src="/script/bullet.class.js"></script>
-		<script type="text/javascript" src="/script/smoke.class.js"></script>
-		<script type="text/javascript" src="/script/level.class.js"></script>
-		<script type="text/javascript" src="/script/main.js"></script>
-		<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+		<title>Canvas Sopwith - By Joey Novak</title>
+        <?php
+            if($_SERVER['HTTP_HOST'] == 'sopwith.nlocal.info'){
+                ?>
+                <script type="text/javascript" src="js/lib/melonJS-0.9.4.js"></script>
+                <?php
+            } else {
+                ?>
+                <script type="text/javascript" src="js/lib/melonJS-0.9.4-min.js"></script>
+                <?php
+            }
+        ?>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+
+
+        <script type="text/javascript" src="/js/resources.js"></script>
+
+        <script type="text/javascript" src="/js/Screen/PlayScreen.js"></script>
+
+        <script type="text/javascript" src="/js/Entity/Player.js"></script>
+
+		<script type="text/javascript" src="/js/main.js"></script>
 	</head>
-	<body onload="init();">
-		<canvas id="plane" width="640px" height="480px"></canvas>
+	<body>
+    <div id="canvasWrapper"></div>
 	</body>
 </html>
