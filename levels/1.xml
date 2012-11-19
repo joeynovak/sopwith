@@ -1,0 +1,23 @@
+<level title="Level 1" description="The first level">
+	<assets>
+		<asset>
+			<instances>
+				<instance x="0" y="500" />
+				<instance x="350" y="500" />
+				<instance x="700" y="500" />
+				<instance x="1050" y="500" />
+				<instance x="1400" y="500" />
+			</instances>
+			<points>
+				<point x="0" y="0" />
+				<point x="50" y="80" />
+				<point x="100" y="40" />
+				<point x="150" y="-60" />
+				<point x="180" y="60" />
+				<point x="220" y="30" />
+				<point x="320" y="-70" />
+				<point x="350" y="0" />
+			</points>
+		</asset>
+	</assets>
+</level>
