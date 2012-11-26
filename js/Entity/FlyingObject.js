@@ -1,6 +1,6 @@
 var FlyingObject = me.ObjectEntity.extend({
-    init: function(){
-        this.parent(this);
+    init: function(x, y, settings){
+        this.parent(x, y, settings);
         this.absoluteVelocity = 0;
         this.accelerationSpeed = 1;
         this.maxAbsoluteVelocity = 100;
