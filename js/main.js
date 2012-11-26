@@ -2,7 +2,7 @@ var sopwith = {
     onload: function() {
 
         // init the video
-        if (!me.video.init("canvasWrapper", 640, 480, false, 1.0)) {
+        if (!me.video.init("canvasWrapper", 1024, 768, true, 1)) {
             alert("Sorry but your browser does not support html 5 canvas.");
             return;
         }
