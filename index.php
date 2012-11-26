@@ -20,9 +20,9 @@
         <script type="text/javascript" src="/js/resources.js"></script>
 
         <script type="text/javascript" src="/js/Screen/PlayScreen.js"></script>
-        <script type="text/javascript" src="/js/Entity/FlyingObject.js"></script>
-        <script type="text/javascript" src="/js/Entity/Plane.js"></script>
-        <script type="text/javascript" src="/js/Entity/Player.js"></script>
+        <script type="text/javascript" src="/js/Entity/FlyingEntity.js"></script>
+        <script type="text/javascript" src="/js/Entity/PlaneEntity.js"></script>
+        <script type="text/javascript" src="/js/Entity/PlayerEntity.js"></script>
 
 		<script type="text/javascript" src="/js/main.js"></script>
 	</head>

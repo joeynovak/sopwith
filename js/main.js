@@ -32,12 +32,13 @@ var sopwith = {
         me.entityPool.add("mainPlayer", PlayerEntity);
 
        // enable the keyboard
-       me.input.bindKey(me.input.KEY.COMMA,  "pitchUp");
-       me.input.bindKey(me.input.KEY.QUESTIONMARK, "pitchDown");
-       me.input.bindKey(me.input.KEY.X,     "throttleUp");
-       me.input.bindKey(me.input.KEY.Z,     "throttleDown");
-       me.input.bindKey(me.input.KEY.SPACE, "shoot", true);
-       me.input.bindKey(me.input.KEY.B,     "dropBomb", true);
+       me.input.bindKey(me.input.KEY.PERIOD,        "flip");
+       me.input.bindKey(me.input.KEY.COMMA,         "pitchUp");
+       me.input.bindKey(me.input.KEY.QUESTIONMARK,  "pitchDown");
+       me.input.bindKey(me.input.KEY.X,             "throttleUp");
+       me.input.bindKey(me.input.KEY.Z,             "throttleDown");
+       me.input.bindKey(me.input.KEY.SPACE,         "shoot", true);
+       me.input.bindKey(me.input.KEY.B,             "dropBomb", true);
 
        // start the game
         // start the game
