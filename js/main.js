@@ -30,6 +30,7 @@ var sopwith = {
         me.state.set(me.state.PLAY, new PlayScreen());
 
         me.entityPool.add("mainPlayer", PlayerEntity);
+        me.entityPool.add("Storage", StorageEntity);
 
        // enable the keyboard
        me.input.bindKey(me.input.KEY.PERIOD,        "flip");

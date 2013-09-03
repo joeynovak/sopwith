@@ -1,16 +1,20 @@
 var resources = [
     {
+        name: "plane",
+        type: "image",
+        src: "sprites/plane.png"
+    }, {
         name: "Terrain",
         type: "image",
         src: "levels/tilesets/terrain.png"
     }, {
+        name: "metatiles32x32",
+        type: "image",
+        src: "levels/tilesets/metatiles32x32.png"
+    }, {
         name: "Level1",
         type: "tmx",
         src: "levels/level1.tmx"
-    }, {
-        name: "plane",
-        type: "image",
-        src: "sprites/plane.png"
     }, {
         name: "sopwith_engineidle",
         type: "audio",

@@ -6,9 +6,9 @@ var PlaneEntity = FlyingEntity.extend({
         // set the default horizontal & vertical speed (accel vector)
         this.setMaxVelocity(10, 10);
 
-        this.addAnimation("fly", [0]);
-        this.addAnimation("flyInverted", [1]);
-        this.setCurrentAnimation("fly");
+        this.renderable.addAnimation("fly", [0]);
+        this.renderable.addAnimation("flyInverted", [1]);
+        this.renderable.setCurrentAnimation("fly");
         this.rotateSpeed = 5;
     },
 

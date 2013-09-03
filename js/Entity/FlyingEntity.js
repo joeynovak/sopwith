@@ -37,13 +37,9 @@ var FlyingEntity = me.ObjectEntity.extend({
         this.vel.x = Math.sin(this.angle + 1.57) * this.absoluteVelocity;
         this.vel.y = -Math.cos(this.angle + 1.57) * this.absoluteVelocity;
 
-        if(this.absoluteVelocity != 0){
-            this.updateMovement();
-            this.parent(this);
-            return true;
-        } else {
-            return false;
-        }
+        this.updateMovement();
+        this.parent(this);
+        return true;
     },
 
     determineAndPlaySound: function(){

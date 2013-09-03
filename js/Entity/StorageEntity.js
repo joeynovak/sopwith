@@ -1,0 +1,3 @@
+var StorageEntity = BuildingEntity.extend({
+
+});
