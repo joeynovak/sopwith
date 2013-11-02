@@ -24,7 +24,7 @@ var PlayerEntity = PlaneEntity.extend({
  
     ------ */
     lastWasDown: false,
-
+    alwaysUpdate: true,
     update: function() {
         if(me.input.isKeyPressed('flip')){
             if(!this.lastWasDown){
@@ -49,9 +49,9 @@ var PlayerEntity = PlaneEntity.extend({
         }
 
         if(me.input.isKeyPressed("pitchUp")){
-            this.angle -= (this.invert ? -1 : 1) * Number.prototype.degToRad(this.rotateSpeed) * me.timer.tick;
+            this.renderable.angle -= (this.invert ? -1 : 1) * Number.prototype.degToRad(this.rotateSpeed) * me.timer.tick;
         } else if(me.input.isKeyPressed("pitchDown")){
-            this.angle += (this.invert ? -1 : 1) * Number.prototype.degToRad(this.rotateSpeed) * me.timer.tick;
+            this.renderable.angle += (this.invert ? -1 : 1) * Number.prototype.degToRad(this.rotateSpeed) * me.timer.tick;
         }
 
         this.parent(this);

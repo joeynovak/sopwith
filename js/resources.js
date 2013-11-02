@@ -12,7 +12,7 @@ var resources = [
         type: "image",
         src: "levels/tilesets/metatiles32x32.png"
     }, {
-        name: "Level1",
+        name: "level1",
         type: "tmx",
         src: "levels/level1.tmx"
     }, {

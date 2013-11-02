@@ -1,7 +1,7 @@
 var PlayScreen = me.ScreenObject.extend({
 
     onResetEvent: function() {
-        me.levelDirector.loadLevel("Level1");
+        me.levelDirector.loadLevel("level1");
     },
 
     /* ---

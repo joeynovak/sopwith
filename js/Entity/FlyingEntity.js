@@ -18,9 +18,9 @@ var FlyingEntity = me.ObjectEntity.extend({
         } else {
             this.invert = invert;
             if(invert){
-                this.setCurrentAnimation("flyInverted");
+                this.renderable.setCurrentAnimation("flyInverted");
             } else {
-                this.setCurrentAnimation("fly");
+                this.renderable.setCurrentAnimation("fly");
             }
         }
     },
@@ -34,8 +34,8 @@ var FlyingEntity = me.ObjectEntity.extend({
             this.absoluteVelocity = this.minAbsoluteVelocity;
         }
 
-        this.vel.x = Math.sin(this.angle + 1.57) * this.absoluteVelocity;
-        this.vel.y = -Math.cos(this.angle + 1.57) * this.absoluteVelocity;
+        this.vel.x = Math.sin(this.renderable.angle + 1.57) * this.absoluteVelocity;
+        this.vel.y = -Math.cos(this.renderable.angle + 1.57) * this.absoluteVelocity;
 
         this.updateMovement();
         this.parent(this);
@@ -76,7 +76,7 @@ var FlyingEntity = me.ObjectEntity.extend({
                 me.audio.stop(this.currentSoundFile);
             }
             this.currentSoundFile = soundFile;
-            me.audio.play(this.currentSoundFile, true);
+            //me.audio.play(this.currentSoundFile, true);
         }
     }
 });
